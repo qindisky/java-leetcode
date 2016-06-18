@@ -75,25 +75,6 @@ public class _45JumpGameII {
         return steps;
     }
     
-    private void cal(int[] nums, int[] min, int i, int count) {
-        if (count >= min[0]) {
-            return;
-        }
-        System.out.println(i + "\t" + nums[i] + "\t" + count + "\t" + min[0]);
-        for (int step = nums[i]; step >= 1; step--) {
-            if (i + step == nums.length - 1) {
-                System.out.println(count + 1);
-                if (min[0] > count + 1) {
-                    min[0] = count + 1;
-                }
-            } else if (i + step < nums.length - 1) {
-                cal(nums, min, i + step, count + 1);
-            } else {
-                break;
-            }
-        }
-    }
-    
     public static void main(String[] args) {
         _45JumpGameII solution = new _45JumpGameII();
         System.out.println(solution.jump(new int[]{8,2,4,4,4,9,5,2,5,8,8,0,8,6,9,1,1,6,3,5,1,2,6,6,0,4,8,6,0,3,2,8,7,6,5,1,7,0,3,4,8,3,5,9,0,4,0,1,0,5,9,2,0,7,0,2,1,0,8,2,5,1,2,3,9,7,4,7,0,0,1,8,5,6,7,5,1,9,9,3,5,0,7,5}));
